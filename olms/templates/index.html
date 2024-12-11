@@ -35,27 +35,24 @@
   ======================================================== -->
 </head>
 
-<body class="index-page">
+<body class="index-page bg-dark-700">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <header id="header" class="header d-flex align-items-center fixed-top bg-black">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center py-3">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="index.html" class="logo d-flex align-items-center me-auto text-decoration-none">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets1/img/logo.png" alt=""> -->
-        <h1 class="sitename">Online Library Management System</h1>
+         <img src="" alt="book logo">
+        <!-- <h4 class="sitename text-3xl text-white"></h4> -->
       </a>
 
       <nav class="navmenu">
-        <ul>
-          <li><a href="{% url 'index' %}" class="active">Home</a></li>
-          <li><a href="{% url 'login' %}">Admin</a></li>
-          <li><a href="{% url 'signup' %}">Student Signup</a></li>
-          <li><a href="{% url 'login' %}">Student Signin</a></li>
-        
-            </ul>
-          </li>
-        
+        <ul class="d-flex align-items-center gap-4 m-0">
+          <li class="list-style-type-none list-unstyled"><a href="{% url 'index' %}" class="active text-white text-decoration-none text-md">Home</a></li>
+          <li class="text-white list-style-type-none list-unstyled"><a href="{% url 'login' %}" class="text-white text-decoration-none text-md">Admin</a></li>
+          <li class="text-white list-style-type-none list-unstyled"><a href="{% url 'signup' %}" class="text-white text-decoration-none text-md">Student Signup</a></li>
+          <li class="text-white list-style-type-none list-unstyled"><a href="{% url 'login' %}" class="text-white text-decoration-none text-md">Student Signin</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -68,18 +65,19 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section dark-background hero-wrapper">
 
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>Get Better read on the world</h1>
-            <p>Libraries change lives for the better. A library is not a luxury but one of the necessities of life.</p>
-            
+          <div class="col-8 mx-auto order-2 order-lg-1 d-flex flex-column justify-content-center mt-44" data-aos="zoom-out">
+            <h3 class="text-white text-center mt-44 inter-medium">READ THE <span class="text-primary-900 inter-semibold">BOOK</span> </h3>
+            <h3 class="text-white text-center mt-1 inter-medium">READ THE <span class="text-primary-900 inter-semibold">WORLD</span></h3>
+            <p class="text-white text-center mt-4">"A room without books is like a body without a soul."</p>
+            <p class="text-center text-white">- Marcus Tullius Cicero.</p>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
             <img src="{% static 'assets1/img/hero-img.png' %}" height="200" class="img-fluid animated" alt="">
-          </div>
+          </div> -->
         </div>
       </div>
 

@@ -1,0 +1,634 @@
+:root {
+    --primary-800:#FF3333;
+    --primary-900: #C32D3A;
+    --secondary:#EAB5BA;
+    --success-800:#31A1A8;
+    --success-900:#02A150;
+    --tertiary:#004CE8;
+    --grey-100:#C7C6CB;
+    --grey-200:#6D758F !important;
+    --dark-900:#000000;
+    --dark-800:#18161C;
+    --dark-700:#202126;
+    --dark-600:#202126CC;
+    --white: #ffffff;
+    --warning: #ECBA0B;
+  }
+  
+  html {
+    font-size: 10px !important;
+  }
+  
+  body .text-primary-800{
+    color: var(--primary-800) !important;
+  }
+  body .text-primary-900 {
+    color: var(--primary-900) !important;
+  }
+  .text-secondary{
+    color: var(--secondary);
+  }
+  .text-tertiary{
+    color: var(--tertiary);
+  }
+  .text-success-800{
+    color: var(--success-800);
+  }
+  .text-success-900{
+    color: var(--success-900);
+  }
+  body .text-grey-100{
+    color: var(--grey-100) !important;
+  }
+  body .text-grey-200{
+    color: var(--grey-200) !important;
+  }
+  body .text-dark-900{
+    color: var(--dark-900);
+  }
+  body .text-dark-800{
+    color: var(--dark-800);
+  }
+  body .text-dark-700{
+    color: var(--dark-700);
+  }
+  body .text-dark-600{
+    color: var(--dark-600);
+    opacity: 80%;
+  }
+  
+  
+  /* background color classes */
+  .bg-primary-800{
+    background-color: var(--primary-800);
+  }
+  .bg-primary-900{
+    background-color: var(--primary-900);
+  }
+  .bg-secondary{
+    background-color: var(--secondary);
+  }
+  .bg-success{
+    background-color: var(--success);
+  }
+  .bg-light{
+    background-color: var(--light);
+  }
+  .bg-dark-900{
+    background-color: var(--dark-900) !important;
+  }
+  .bg-dark-800{
+    background-color: var(--dark-800) !important;
+  }
+  .bg-dark-700{
+    background-color: var(--dark-700) !important;
+  }
+  .bg-dark-600{
+    background-color: var(--dark-600) !important;
+    opacity: 80%;
+  }
+  
+  @font-face {
+    font-family: "Inter", sans-serif;
+    src: url("../fonts/Inter-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter", sans-serif;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter", sans-serif;
+    src: url("../fonts/Inter-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter", sans-serif;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter", sans-serif;
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter", sans-serif;
+    src: url("../fonts/Inter-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-display: swap;
+  }
+  .inter-light {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 300 !important;
+  }
+  .inter-regular {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 400 !important;
+  }
+  .inter-medium {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 500 !important;
+  }
+  .inter-semibold {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 600 !important;
+  }
+  .inter-bold {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 700 !important;
+  }
+  .inter-extra-bold {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 800 !important;
+  }
+  .inter-black {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 900 !important;
+  }
+  
+  html body {
+    font-size: 1rem !important;
+    font-family: "Inter", sans-serif !important;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  body h1,
+  body .h1 {
+    font-size: 4.8rem  !important;
+    line-height: 5.2rem !important;
+  }
+  body h2,
+  body .h2 {
+    font-size: 4rem  !important;
+    line-height: 4.4rem !important;
+  }
+  body h3,
+  body .h3 {
+    font-size: 3.2rem  !important;
+    line-height: 3.6rem !important;
+  }
+  body h4,
+  body .h4 {
+    font-size: 2.4rem  !important;
+    line-height: 2.8rem !important;
+  }
+  body h5,
+  body .h5 {
+    font-size: 2rem  !important;
+    line-height: 2.4rem !important;
+  }
+  body h6,
+  body .h6 {
+    font-size: 1.8rem  !important;
+    line-height: 2.2rem !important;
+  }
+  body .text-xs {
+    font-size: 0.8rem !important; /* 8px */
+  }
+  body .text-sm {
+    font-size: 1rem !important; /* 10px */
+  }
+  body .text-md {
+    font-size: 1.2rem !important; /* 12px */
+  }
+  body .text-lg{
+    font-size: 1.4rem !important; 
+  }
+  body .text-xl{
+    font-size: 1.6rem !important;
+  }
+  body .text-2xl {
+    font-size: 1.8rem !important;
+  }
+  body .leading-normal {
+    line-height: normal !important;
+  }
+  body .leading-none {
+    line-height: 0px;
+  }
+  body .leading-xs {
+    line-height: 1rem !important; /* 10px */
+  }
+  body .leading-sm {
+    line-height: 1.2rem !important; /* 12px */
+  }
+  body .leading-md {
+    line-height: 1.4rem !important; /* 14px */
+  }
+  body .leading-lg{
+    line-height: 1.6rem !important; 
+  }
+  body .leading-xl{
+    line-height: 1.8rem !important;
+  }
+  body .leading-2xl {
+    line-height: 2.0rem !important;
+  }
+  body .leading-3xl {
+    line-height: 2.2rem !important;
+  }
+  body .leading-4xl {
+    line-height: 2.4rem !important;
+  }
+  body .leading-5xl {
+    line-height: 2.6rem !important;
+  }
+  body .leading-6xl {
+    line-height: 2.8rem !important;
+  }
+  .tracking-negative {
+    letter-spacing: -0.9px;
+  }
+  .tracking-negative-28 {
+    letter-spacing: -0.28px;
+  }
+  .tracking-negative-12 {
+    letter-spacing: -0.12px;
+  }
+  .tracking-negative-two {
+    letter-spacing: -0.24px;
+  }
+  .tracking-negative-xxs {
+    letter-spacing: -0.1px;
+  }
+  .tracking-negative-xs {
+    letter-spacing: -0.32px;
+  }
+  .tracking {
+    letter-spacing: 0.1px;
+  }
+  .tracking-xs {
+    letter-spacing: 0.15px;
+  }
+  .tracking-xs2 {
+    letter-spacing: 0.18px;
+  }
+  .tracking-sm {
+    letter-spacing: 0.2px;
+  }
+  .tracking-md {
+    letter-spacing: 0.6px;
+  }
+  .tracking-xxs{
+    letter-spacing: 0.06px;
+  }
+  
+  .tracking-3xxs{
+    letter-spacing: 0.07px;
+  }
+  .tracking-3xs{
+    letter-spacing: 0.08px;
+  }
+  /* Spacings for sections and titles */
+  .title-spacing-2xl {
+    margin-top: 38px;
+    margin-bottom: 35px;
+  }
+  .mt-12 {
+    margin-top: 12px !important;
+  }
+  .mb-12 {
+    margin-bottom: 12px !important;
+  }
+  .mt-16 {
+    margin-top: 16px !important;
+  }
+  .mb-16 {
+    margin-bottom: 16px !important;
+  }
+  .mt-18 {
+    margin-top: 18px;
+  }
+  .mb-18 {
+    margin-bottom: 18px;
+  }
+  .mt-20 {
+    margin-top: 20px;
+  }
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  .mt-24 {
+    margin-top: 24px;
+  }
+  .mb-24 {
+    margin-bottom: 24px;
+  }
+  .mr-24 {
+    margin-right: 24px;
+  }
+  .mt-28 {
+    margin-top: 28px;
+  }
+  .mb-28 {
+    margin-bottom: 28px;
+  }
+  .mt-36 {
+    margin-top: 36px;
+  }
+  .mb-36 {
+    margin-bottom: 36px;
+  }
+  .mt-38 {
+    margin-top: 38px;
+  }
+  .mb-38 {
+    margin-bottom: 38px;
+  }
+  .mt-40 {
+    margin-top: 40px;
+  }
+  .mb-40 {
+    margin-bottom: 40px;
+  }
+  .mt-44 {
+    margin-top: 44px;
+  }
+  .mb-44 {
+    margin-bottom: 44px;
+  }
+  .px-20 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .pt-12 {
+    padding-top: 12px !important;
+  }
+  .pb-12 {
+    padding-bottom: 12px !important;
+  }
+  .pt-16 {
+    padding-top: 16px !important;
+  }
+  .pb-16 {
+    padding-bottom: 16px !important;
+  }
+  .pt-18 {
+    padding-top: 18px;
+  }
+  .pb-18 {
+    padding-bottom: 18px;
+  }
+  .pt-20 {
+    padding-top: 20px;
+  }
+  .pb-20 {
+    padding-bottom: 20px;
+  }
+  .pt-24 {
+    padding-top: 24px;
+  }
+  .pb-24 {
+    padding-bottom: 24px;
+  }
+  .pr-28 {
+    padding-right: 28px;
+  }
+  .pb-28 {
+    padding-bottom: 28px;
+  }
+  .pt-34 {
+    padding-top: 34px;
+  }
+  .pb-34 {
+    padding-bottom: 34px;
+  }
+  .pt-36 {
+    padding-top: 36px;
+  }
+  .pb-36 {
+    padding-bottom: 36px;
+  }
+  .pt-38 {
+    padding-top: 38px;
+  }
+  .pb-38 {
+    padding-bottom: 38px;
+  }
+  .pt-40 {
+    padding-top: 40px;
+  }
+  .pb-40 {
+    padding-bottom: 40px;
+  }
+  .pt-44 {
+    padding-top: 44px;
+  }
+  .pb-44 {
+    padding-bottom: 44px;
+  }
+  .gap-12 {
+    gap: 12px !important;
+  }
+  .gap-18 {
+    gap: 18px !important;
+  }
+  .gap-20 {
+    gap: 20px !important;
+  }
+  .gap-24 {
+    gap: 24px !important;
+  }
+  .gap-32 {
+    gap: 32px !important;
+  }
+  body .btn-primary {
+    background-color: var(--primary-900) !important;  
+    border: 1px solid transparent !important;
+    min-width: 143px;
+    padding: 14px 24px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    text-align: center;
+    font-size: 0.857rem !important;  
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  body .btn-primary:hover {
+    opacity: 0.8;
+  }
+  body .btn-primary-bg-transparent {
+    background-color: rgb(195, 45, 58, 0.3) !important;  
+    border: 1px solid var(--primary-900) !important;
+  }
+  body .btn-secondary {
+    background-color: var(--dark-700) !important;  
+    border: 1px solid var(--dark-800) !important;
+    padding: 14px 24px;
+    justify-content: center;
+    min-width: 143px;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    text-align: center;
+    font-size: 0.857rem !important;  
+    font-style: normal;
+    font-weight: 600;
+    color: var(--white) !important;
+  }
+  body .btn-tiny {
+    padding: 3px 12px;
+    min-width: unset;
+    font-size: 1rem !important;
+    line-height: 2;
+    letter-spacing: -0.1px;
+  }
+  body .btn-secondary:hover {
+    opacity: 0.8;
+  }
+  
+  /*style-guide code end */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    html {
+      font-size: 12px !important;
+    }
+  
+    body h1, body .h1 {
+      font-size: 5.6rem  !important;
+      line-height: 6rem !important;
+    }
+  
+    body h2, body .h2 {
+      font-size: 4.8rem  !important;
+      line-height: 5.2rem !important;
+    }
+  
+    body h3, body .h3 {
+      font-size: 4rem  !important;
+      line-height: 4.4rem !important;
+    }
+  
+    /* Adjust padding and margin for tablets */
+    .mt-16 {
+      margin-top: 24px !important;
+    }
+  
+    .mb-16 {
+      margin-bottom: 24px !important;
+    }
+  
+    .px-20 {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  
+    .text-sm {
+      font-size: 1.2rem !important; /* 12px for tablet */
+    }
+  
+    .text-md {
+      font-size: 1.4rem !important; /* 14px for tablet */
+    }
+  
+    .container {
+      max-width: 90%;
+    }
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 1024px) {
+    html {
+      font-size: 14px !important;
+    }
+    body h1, body .h1 {
+      font-size: 6.4rem  !important;
+      line-height: 6.8rem !important;
+    }
+  
+    body h2, body .h2 {
+      font-size: 5.2rem  !important;
+      line-height: 5.6rem !important;
+    }
+  
+    body h3, body .h3 {
+      font-size: 4.8rem  !important;
+      line-height: 5.2rem !important;
+    }
+  
+    .mt-24 {
+      margin-top: 32px !important;
+    }
+  
+    .mb-24 {
+      margin-bottom: 32px !important;
+    }
+  
+    .px-20 {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+  
+    .container {
+      max-width: 80%;
+    }
+  
+    .text-lg {
+      font-size: 1.8rem !important;
+    }
+  
+    .text-xl {
+      font-size: 2rem !important;
+    }
+  
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+  @media screen and (min-width: 1336px) {
+    .container {
+      max-width: 1154px !important;
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    .container {
+      max-width: 1480px !important;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    html {
+      font-size: 16px !important;
+    }
+    .container {
+      max-width: 1600px !important;
+    }
+  }
+  @media screen and (min-width: 2560px) {
+    html {
+      font-size: 18px !important;
+    }
+    .container {
+      max-width: 2040px !important;
+    }
+  }
+  
+  @media screen and (min-width: 3480px) {
+    html {
+      font-size: 20px !important;
+    }
+    .container {
+      max-width: 2600px !important;
+    }
+  }
+  
+  @media screen and (min-width: 3840px) {
+    html {
+      font-size: 22px !important;
+    }
+    .container {
+      max-width: 3200px !important;
+    }
+  }
