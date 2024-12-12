@@ -41,10 +41,9 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center py-3">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto text-decoration-none">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets1/img/logo.png" alt=""> -->
+       
          <img src="" alt="book logo">
-        <!-- <h4 class="sitename text-3xl text-white"></h4> -->
+       
       </a>
 
       <nav class="navmenu">
@@ -76,13 +75,83 @@
             <p class="text-center text-white">- Marcus Tullius Cicero.</p>
           </div>
           <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{% static 'assets1/img/hero-img.png' %}" height="200" class="img-fluid animated" alt="">
+            <img src="{% static 'assets1/img/hero-img.png' %}" height="200" class="img-fluid animated" alt="image-not-found">
           </div> -->
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </section> <!-- /Hero Section -->
 
+
+    <section class="books">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h5 class="inter-semibold text-center swiper-heading-padding text-white m-0 pb-20">
+              Our <span class="text-primary-900">Books</span>
+            </h5>
+          </div>
+          <div class="col-12">
+            <div class="swiper mySwiper my-5 px-3 w-100">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide text-white">
+                  <a href="">
+                    <div class="position-relative">
+                      <img src="https://shashwatpublication.com/files/book-covers/front_cover_imgSB20668.jpg" class="book-slider-image" alt="image-not-found">
+                      <div class="position-absolute bottom-0 w-100">
+                        <p class="m-0 inter-medium leading-md px-2 text-white text-sm text-start tracking-xs">
+                          upto <span class="inter-bold">53% OFF</span>
+                        </p>
+                        <div class="bg-book-card w-100">
+                          <div class="d-flex justify-content-between align-items-center mb-1 gap-1">
+                            <p class="inter-semibold m-0 text-white text-md carousel-gym-title leading-lg">
+                              C++
+                            </p>
+                          </div>
+        
+                          <p class="inter-regular m-0 text-xs text-start text-grey-100 leading-lg">
+                            <span class="inter-bold">1.6 km</span> from centre
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+                <div class="swiper-slide text-white">
+                  <img src="https://i.pinimg.com/736x/29/7c/70/297c7051650e2eb814f5e3cc42e04840.jpg" class="book-slider-image" alt="image-not-found">
+                </div>
+              </div>
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>  
+    </section>
+
+    <section class="bg-white my-5 text-center">
+
+    </section>
   
 
   </main>
@@ -108,7 +177,25 @@
   <script src="{% static 'assets1/vendor/waypoints/noframework.waypoints.js' %}"></script>
   <script src="{% static 'assets1/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
   <script src="{% static 'assets1/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      autoplay: {
+        delay: 2500,
+      },
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
   <!-- Main JS File -->
   <script src="{% static 'assets1/js/main.js' %}"></script>
 
