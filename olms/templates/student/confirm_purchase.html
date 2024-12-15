@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h3 class="font-weight-bold">Confirm Purchase</h3>
+        <p><strong>Book Name:</strong> {{ book_name }}</p>
+        <p><strong>Book ID:</strong> {{ book_id }}</p>
+        <p><strong>Price:</strong> {{ book_price }}</p>
+
+        <form action="{% url 'confirm_purchase' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="book_id" value="{{ book_id }}">
+            <input type="hidden" name="book_name" value="{{ book_name }}">
+            <input type="hidden" name="book_price" value="{{ book_price }}">
+
+            <button type="submit" class="btn btn-success">Confirm Purchase</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

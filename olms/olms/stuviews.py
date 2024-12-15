@@ -85,6 +85,29 @@ def BOOKSDETAILS(request):
 
 
 
+@login_required(login_url='/')
+def CONFIRM_PURCHASE(request):
+    if request.method == 'POST':
+        book_id = request.POST.get('book_id')
+        book_name = request.POST.get('book_name')
+        book_price = request.POST.get('book_price')
+        
+        # Process the purchase here
+        # For now, just render a confirmation page
+        context = {
+            'book_id': book_id,
+            'book_name': book_name,
+            'book_price': book_price,
+        }
+        return render(request, 'student/confirm_purchase.html', context)
+    
+    return redirect('Student/BooksDetails')  # Redirect to books details if not a POST request
+
+
+
+
+
+
 
 @login_required(login_url='/')
 def BOOKSDETAILS(request):
@@ -106,3 +129,6 @@ def BOOKSDETAILS(request):
     }
     return render(request, 'student/books_details.html', context)
 
+
+def ORDER_SUCCESS(request):
+    return render(request, 'student/order_success.html')
