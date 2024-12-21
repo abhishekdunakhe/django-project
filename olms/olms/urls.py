@@ -58,7 +58,9 @@ urlpatterns = [
     path('Admin/SearchRegusers', adminviews.SEARCHREGUSERS, name='search_regusers'),
     path('Student/IssuedBooks', stuviews.ISSUEDBOOKS, name='issued_books'),
     path('Student/BooksDetails', stuviews.BOOKSDETAILS, name='books_details'),
-
+    path('Student/confirm_purchase/', stuviews.confirm_purchase, name='confirm_purchase'),
+    # path('confirm_purchase/', views.confirm_purchase, name='confirm_purchase'),
+    path('Student/order_success/', stuviews.ORDER_SUCCESS, name='order_success'),
 
     path('Student/StuReg', stuviews.STUDENT_REG, name='signup'),
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -6,9 +6,10 @@ from olmsapp.models import CustomUser,Category,Author,Book,Student,Issuedbookdet
 from django.contrib.auth import get_user_model
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
+from olmsapp.models import BookOrderStatus
+from django.utils import timezone
 import random
 User = get_user_model()
-
 
 
 
@@ -84,8 +85,6 @@ def BOOKSDETAILS(request):
        return render(request,'student/books_details.html')
 
 
-
-
 @login_required(login_url='/')
 def BOOKSDETAILS(request):
     
@@ -105,4 +104,120 @@ def BOOKSDETAILS(request):
     context = {'books': books,
     }
     return render(request, 'student/books_details.html', context)
+
+
+def ORDER_SUCCESS(request):
+    return render(request, 'student/order_success.html')
+
+# @login_required(login_url='/')
+# def confirm_purchase(request):
+#     # book_info = /
+#     if request.method == "POST":
+#         book_id = request.POST.get("book_id")
+#         book_name = request.POST.get("book_name")
+#         book_price = request.POST.get("book_price")
+
+#         # Ensure that the book_price is valid before saving it to the model
+#         try:
+#             book_price = Decimal(book_price)  # Convert to Decimal
+#         except:
+#             # Handle invalid price (e.g., display error or log it)
+#             book_price = 0.00
+
+#         # Assuming the user is logged in and you have the user in request
+#         user = request.user  # Get the logged-in user
+
+#         # Save to the model
+#         order = BookOrderStatus(user=user, book_id=book_id, book_name=book_name, book_price=book_price)
+#         order.save()
+
+#     return render(request, 'student/confirm_purchase.html')  # Or wherever your template is
+
+# @login_required(login_url='/')
+# def confirm_purchase(request):
+#     # Default values in case there is no POST data
+#     book_name = None
+#     book_id = None
+#     book_price = None
+
+#     if request.method == "POST":
+#         book_id = request.POST.get("book_id")
+#         book_name = request.POST.get("book_name")
+#         book_price = request.POST.get("book_price")
+
+#         # Ensure that the book_price is valid before saving it to the model
+#         try:
+#             book_price = Decimal(book_price)  # Convert to Decimal
+#         except:
+#             # Handle invalid price (e.g., display error or log it)
+#             book_price = 0.00
+
+#         # Assuming the user is logged in and you have the user in request
+#         user = request.user  # Get the logged-in user
+
+#         # Save to the model
+#         order = BookOrderStatus(user=user, book_id=book_id, book_name=book_name, book_price=book_price)
+#         order.save()
+
+#     # Pass the book details to the template
+#     context = {
+#         'book_id': book_id,
+#         'book_name': book_name,
+#         'book_price': book_price,
+#     }
+
+#     return render(request, 'student/confirm_purchase.html', context)  # Pass context here
+
+# from django.shortcuts import render, redirect
+# from django.contrib.auth.decorators import login_required
+# from .models import BookOrderStatus
+from decimal import Decimal
+
+@login_required(login_url='/')
+def confirm_purchase(request):
+    # Default values in case there is no POST data
+    book_name = None
+    book_id = None
+    book_price = None
+
+    if request.method == "POST":
+        book_id = request.POST.get("book_id")
+        book_name = request.POST.get("book_name")
+        book_price_str = request.POST.get("book_price")
+
+        # Convert the price to Decimal
+        try:
+            book_price = Decimal(book_price_str) if book_price_str else Decimal('0.00')
+        except Exception as e:
+            book_price = Decimal('0.00')
+
+        # Assuming the user is logged in and you have the user in request
+        user = request.user  # Get the logged-in user
+
+        # Save the order with status 'Pending' initially
+        # order = BookOrderStatus.objects.create(
+        #     user=user,
+        #     book_id=book_id,
+        #     book_name=book_name,
+        #     book_price=book_price,
+        #     status='Pending',  # Initially set the status as 'Pending'
+        # )
+
+        # # After saving, update the order's status to 'Confirmed'
+        # # order.status = 'Confirmed'
+        # order.save()  # Save the updated status
+
+        # Redirect to a confirmation or success page (or back to the book list)
+        # return redirect('order_confirmation')  # Replace 'order_confirmation' with the name of your confirmation page URL
+    context = {
+        'user' : user,
+        'book_id': book_id,
+        'book_name': book_name,
+        'book_price': book_price,
+        # 'status'= Pending,
+    }
+
+    return render(request, 'student/confirm_purchase.html', context)
+
+
 
