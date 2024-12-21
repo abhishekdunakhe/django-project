@@ -3,19 +3,35 @@
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <h3 class="font-weight-bold">Confirm Purchase</h3>
-        <p><strong>Book Name:</strong> {{ book_name }}</p>
-        <p><strong>Book ID:</strong> {{ book_id }}</p>
-        <p><strong>Price:</strong> {{ book_price }}</p>
+        <div class="w-100 bg-dark-700 p-5 card">
+            <h5 class="text-white inter-semibold leading-lg mb-4">Confirm Purchase</h5>
+                <p class="m-0 w-50 d-flex align-items-center">
+                    <span class="text-grey-100 text-sm leading-xl leading-3xl text-truncate inter-semibold">Book Name - &nbsp;</span>  
+                    <span class="leading-3xl text-white text-sm inter-semibold text-truncate">{{ book_name }}</span>
+                </p>
+                <p class="m-0 w-50 d-flex align-items-center">
+                    <span class="text-grey-100 text-sm leading-xl leading-3xl text-truncate inter-semibold">Book ID - &nbsp;</span>  
+                    <span class="leading-3xl text-white text-sm inter-semibold text-truncate">{{ book_id }}</span>
+                </p>
+                <p class="m-0 w-50 d-flex align-items-center">
+                    <span class="text-grey-100 text-sm leading-xl leading-3xl text-truncate inter-semibold">Price - &nbsp;</span>  
+                    <span class="leading-3xl text-white text-sm inter-semibold text-truncate">{{ book_price|floatformat:2 }}</span>
+                </p>
+            <!-- Display Book Information -->
+            <!-- <p><strong>Book Name:</strong> {{ book_name }}</p>
+            <p><strong>Book ID:</strong> {{ book_id }}</p>
+            <p><strong>Price:</strong> ${{ book_price|floatformat:2 }}</p>  Display price with two decimal points -->
+            {{ user }}
+            <!-- Form for confirming purchase -->
+            <form action="{% url 'confirm_purchase' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="book_id" value="{{ book_id }}">
+                <input type="hidden" name="book_name" value="{{ book_name }}">
+                <input type="hidden" name="book_price" value="{{ book_price }}">
 
-        <form action="{% url 'confirm_purchase' %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="book_id" value="{{ book_id }}">
-            <input type="hidden" name="book_name" value="{{ book_name }}">
-            <input type="hidden" name="book_price" value="{{ book_price }}">
-
-            <button type="submit" class="btn btn-success">Confirm Purchase</button>
-        </form>
+                <button type="submit" class="btn btn-success inter-semibold leading-sm">Confirm Purchase</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -4,9 +4,9 @@
            
             
             <div class="col-12 grid-margin stretch-card">
-              <div class="card">
+              <div class="card bg-dark-700">
                 <div class="card-body">
-                  <h4 class="card-title">Profile</h4>
+                  <h4 class="card-title text-white">Profile</h4>
                  
                   {% if messages %}
               {% for message in messages %}
@@ -35,29 +35,29 @@
                   <form class="forms-sample" method="POST" action="{% url 'admin_profile_update' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
-                      <label for="exampleInputName1">Old Profile Pic</label>
-                      <img src="{{user.profile_pic}}" height="150" width="150">
+                      <label for="exampleInputName1" class="text-grey-100 inter-semibold leading-lg text-sm">Old Profile Pic</label><br/>
+                      <img src="{{user.profile_pic}}" height="150" width="150" class="rounded-lg profile-page-img">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Profile Pic</label>
-                      <input type="file" class="form-control" name="profile_pic">
+                      <label for="exampleInputEmail3" class="text-grey-100 inter-semibold leading-lg text-sm">Profile Pic</label>
+                      <input type="file" class="form-control input-primary" name="profile_pic">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword4">First Name</label>
-                      <input type="text" class="form-control" name="first_name" value="{{user.first_name}}">
+                      <label for="exampleInputPassword4" class="text-grey-100 inter-semibold leading-lg text-sm">First Name</label>
+                      <input type="text" class="form-control input-primary" name="first_name" value="{{user.first_name}}">
                     </div>
                     <div class="form-group">
-                      <label for="exampleSelectGender">Last Name</label>
-                      <input type="text" class="form-control" name="last_name" value="{{user.last_name}}">
+                      <label for="exampleSelectGender" class="text-grey-100 inter-semibold leading-lg text-sm">Last Name</label>
+                      <input type="text" class="form-control input-primary" name="last_name" value="{{user.last_name}}">
                       </div>
                  
                     <div class="form-group">
-                      <label for="exampleInputCity1">Email</label>
-                      <input type="email" class="form-control" name="email" value="{{user.email}}">
+                      <label for="exampleInputCity1" class="text-grey-100 inter-semibold leading-lg text-sm">Email</label>
+                      <input type="email" class="form-control input-primary" name="email" value="{{user.email}}">
                     </div>
                     <div class="form-group">
-                      <label for="exampleTextarea1">Username</label>
-                      <input type="text" class="form-control" readonly="True" name="username" value="{{user.username}}">
+                      <label for="exampleTextarea1" class="text-grey-100 inter-semibold leading-lg text-sm">Username</label>
+                      <input type="text" class="form-control input-primary" readonly="True" name="username" value="{{user.username}}">
                     </div>
                   
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

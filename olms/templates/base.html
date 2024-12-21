@@ -19,6 +19,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'assets/css/vertical-layout-light/style.css'%}">
+  <link rel="stylesheet" href="{% static 'assets1/css/main.css'%}">
   <!-- endinject -->
 </head>
 <body>
@@ -34,8 +35,8 @@
       <!-- partial:partials/_sidebar.html -->
       {% include 'includes/sidebar.html' %}
       <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
+      <div class="main-panel page-main-panel">
+        <div class="page-content-wrapper">
             {% block content %}
             {% endblock %}
            
@@ -44,7 +45,9 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        {% include 'includes/footer.html' %}
+         <div class="footer-wrapper">
+           {% include 'includes/footer.html' %}
+         </div>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->

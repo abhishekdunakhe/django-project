@@ -39,19 +39,24 @@
 
   <header id="header" class="header d-flex align-items-center fixed-top bg-black">
     <div class="container-fluid container-xl position-relative d-flex align-items-center py-3">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto text-decoration-none">
-       
-         <img src="" alt="book logo">
-       
+      <a href="{% url 'index' %}" class="d-flex align-items-center me-auto" style="text-decoration: none;">
+        <svg width="44" height="44" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" style="enable-background:new 0 0 128 128" xml:space="preserve"><path d="M128 28.27v78.16H0V28.27h8.84v4.8H4.8v68.56h118.4V33.07h-4.04v-4.8z"/><path style="fill:#d93200" d="M89.85 22.06c-15.27 1.68-24.22 7.07-24.22 7.07v72.5h2.44c4.18-1.39 13.22-4.12 22.88-5.18 13.24-1.46 25.64.44 25.64.44V23.53s-11.48-3.15-26.74-1.47zm-51.81 0c-15.27-1.68-26.75 1.47-26.75 1.47v73.36s12.4-1.9 25.64-.44c9.66 1.06 18.7 3.79 22.88 5.18h2.44v-72.5s-8.94-5.39-24.21-7.07z"/></svg>
+        <h5 class="m-0 inter-bold text-white ms-2 text-">Books</h5>
       </a>
-
       <nav class="navmenu">
         <ul class="d-flex align-items-center gap-4 m-0">
-          <li class="list-style-type-none list-unstyled"><a href="{% url 'index' %}" class="active text-white text-decoration-none text-md">Home</a></li>
-          <li class="text-white list-style-type-none list-unstyled"><a href="{% url 'login' %}" class="text-white text-decoration-none text-md">Admin</a></li>
-          <li class="text-white list-style-type-none list-unstyled"><a href="{% url 'signup' %}" class="text-white text-decoration-none text-md">Student Signup</a></li>
-          <li class="text-white list-style-type-none list-unstyled"><a href="{% url 'login' %}" class="text-white text-decoration-none text-md">Student Signin</a></li>
+          <li class="list-style-type-none list-unstyled">
+            <a href="{% url 'index' %}" class="active text-white inter-bold header-menu" style="text-decoration: none;">Home</a>
+          </li>
+          <li class="list-style-type-none list-unstyled">
+            <a href="{% url 'login' %}" class="text-white inter-bold header-menu" style="text-decoration: none;">Admin</a>
+          </li>
+          <li class="list-style-type-none list-unstyled">
+            <a href="{% url 'signup' %}" class="text-white inter-bold header-menu" style="text-decoration: none;">Student Signup</a>
+          </li>
+          <li class="list-style-type-none list-unstyled">
+            <a href="{% url 'login' %}" class="text-white inter-bold header-menu" style="text-decoration: none;">Student Signin</a>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -87,8 +92,8 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h5 class="inter-semibold text-center swiper-heading-padding text-white m-0 pb-20">
-              Our <span class="text-primary-900">Books</span>
+            <h5 class="inter-semibold text-center swiper-heading-padding text-white m-0 pb-20">Collection Of 
+              <svg width="44" height="44" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" style="enable-background:new 0 0 128 128" xml:space="preserve"><path d="M128 28.27v78.16H0V28.27h8.84v4.8H4.8v68.56h118.4V33.07h-4.04v-4.8z"/><path style="fill:#d93200" d="M89.85 22.06c-15.27 1.68-24.22 7.07-24.22 7.07v72.5h2.44c4.18-1.39 13.22-4.12 22.88-5.18 13.24-1.46 25.64.44 25.64.44V23.53s-11.48-3.15-26.74-1.47zm-51.81 0c-15.27-1.68-26.75 1.47-26.75 1.47v73.36s12.4-1.9 25.64-.44c9.66 1.06 18.7 3.79 22.88 5.18h2.44v-72.5s-8.94-5.39-24.21-7.07z"/></svg>
             </h5>
           </div>
           <div class="col-12">
@@ -164,7 +169,7 @@
     <section class="book-covers">
       <div class="container pt-44 pb-44">
         <div class="row">
-          <div class="col-12 css-swiper-wrapper  mt-44 mb-44">
+          <div class="col-12 css-swiper-wrapper mt-44 mb-44">
             <div class="swiper cssslider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide text-white">
@@ -177,7 +182,7 @@
                         Enjoy exclusive benefits,<br>
                         including discounts on Books
                       </p>
-                      <button class="nutritions-btn mt-44 mb-44">Start For Discount</button>
+                      <button class="discount-btn mt-44 mb-44">Start For Discount</button>
                     </div>
                   </div>
                 </div>
@@ -191,7 +196,7 @@
                         Enjoy exclusive benefits,<br>
                         including discounts on Books
                       </p>
-                      <button class="nutritions-btn mt-44 mb-44">Start For Discount</button>
+                      <button class="discount-btn mt-44 mb-44">Start For Discount</button>
                     </div>
                   </div>
                 </div>
@@ -255,7 +260,7 @@
               </a>
             </div>
             <div class="copyright-border-top d-flex align-items-center justify-content-center flex-column">
-              <p class="pt-24 pb-24 m-0 text-md leading-3xl text-grey-100">Online Library Management System @ Python(Django)</p>
+              <p class="pt-24 pb-24 m-0 text-md leading-3xl text-grey-100">Book Collection & Book Selling System. @ Python(Django)</p>
             </div>
           </div>
         </div>

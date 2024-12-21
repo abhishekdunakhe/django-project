@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
+from django.contrib.auth.models import User
+from django.conf import settings
+
 # Create your models here.
 class CustomUser(AbstractUser):
     USER = (
@@ -63,11 +66,15 @@ class Issuedbookdetails(models.Model):
     fine = models.DecimalField(max_digits=10, decimal_places=2,default=0)
 
 
-# class Order(models.Model):
-#     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     price = models.DecimalField(max_digits=10, decimal_places=2)
-#     order_date = models.DateTimeField(auto_now_add=True)
+class BookOrderStatus(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  
+    book_id = models.CharField(max_length=100)
+    book_name = models.CharField(max_length=200)
+    book_price = models.DecimalField(max_digits=10, decimal_places=2)
+    status = models.CharField(max_length=50, default='Pending')
 
-#     def __str__(self):
-#         return f"Order for {self.book.bookname} by {self.user.username}"
+    class Meta:
+        unique_together = ['user', 'book_id']  # Ensures only one order per user per book
+    
+    def __str__(self):
+        return f'{self.book_name} - {self.user.username}'

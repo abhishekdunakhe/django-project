@@ -2,9 +2,9 @@
 {% block content %}
   <div class="row">
             <div class="col-12 grid-margin stretch-card">
-              <div class="card">
+              <div class="card bg-dark-700">
                 <div class="card-body">
-                  <h4 class="card-title">Manage Issued Books</h4>
+                  <h4 class="card-title text-white">Manage Issued Books</h4>
                  
                   {% if messages %}
                   {% for message in messages %}
@@ -30,15 +30,15 @@
                   {% endif %}
                   {% endfor %}
                   {% endif %}
-                  <table class="table table-bordered border-primary">
+                  <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="font-weight: bolder;">#</th>
-                            <th style="font-weight: bolder;">Book Name</th>
-                            <th style="font-weight: bolder;">ISBN</th>
-                            <th style="font-weight: bolder;">Issued Date</th>
-                            <th style="font-weight: bolder;">Return Date</th>
-                            <th style="font-weight: bolder;">Fine (if any)</th>
+                            <th class="text-grey-100 inter-semibold leading-lg text-sm">#</th>
+                            <th class="text-grey-100 inter-semibold leading-lg text-sm">Book Name</th>
+                            <th class="text-grey-100 inter-semibold leading-lg text-sm">ISBN</th>
+                            <th class="text-grey-100 inter-semibold leading-lg text-sm">Issued Date</th>
+                            <th class="text-grey-100 inter-semibold leading-lg text-sm">Return Date</th>
+                            <th class="text-grey-100 inter-semibold leading-lg text-sm">Fine (if any)</th>
                         </tr>
                     </thead>
                     <tbody>

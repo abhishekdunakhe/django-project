@@ -6,7 +6,7 @@
     <div class="col-md-12 grid-margin">
       <div class="row">
         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-          <h3 class="font-weight-bold">Welcome {{user.first_name}} {{user.last_name}}!!</h3>
+          <h3 class="inter-bold text-white m-0">Welcome {{user.first_name}} {{user.last_name}}!!</h3>
           
         </div>
         <div class="col-12 col-xl-4">
@@ -94,8 +94,7 @@
     <div class="col-md-12 grid-margin">
       <div class="row">
         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-          <h3 class="font-weight-bold">Welcome {{user.first_name}} {{user.last_name}}!!</h3>
-          
+          <h4 class="inter-bold text-white m-0">Welcome {{user.first_name}} {{user.last_name}} !!</h4>
         </div>
         <div class="col-12 col-xl-4">
          <div class="justify-content-end d-flex">
@@ -113,11 +112,13 @@
       <div class="row">
        
         <div class="col-md-12 stretch-card transparent">
-          <div class="card card-light-danger">
+          <div class="card bg-dark-700">
             <div class="card-body">
-              <p class="mb-4">Total Book</p>
-              <p class="fs-30 mb-2">{{book_count}}</p>
-             <a href="{% url 'books_details' %}"> <strong style="color: white;"> View Details</strong></a>
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <p class="text-white m-0 text-lg inter-semibold">Total Book - </p>
+                <p class="m-0 text-lg text-white inter-bold ml-2">{{book_count}}</p>
+              </div>
+             <a href="{% url 'books_details' %}" class="text-primary-800 inter-bold text-sm"> View Details</a>
             </div>
           </div>
         </div>
