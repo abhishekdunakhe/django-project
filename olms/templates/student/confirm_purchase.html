@@ -3,8 +3,27 @@
 {% block content %}
 <div class="row">
     <div class="col-12">
+        {% if is_existing %}
+        <div class="p-3 border border-success rounded-lg mb-3">
+            <p class="leading-3xl text-white text-md inter-semibold m-0">Your order already confirmed, Please collect from the store.</p>
+        </div>
+        {% elif is_scuucessful_confirm %}
+        <div class="p-3 border border-success rounded-lg mb-3">
+            <p class="leading-3xl text-white text-md inter-semibold m-0">Your order has been successfully confirmed!</p>
+        </div>
+        {% else %}
+        <div class="p-3 border border-success rounded-lg mb-3 d-none">
+            <p class="leading-3xl text-white text-md inter-semibold m-0">No action has been taken.</p>
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-12">
         <div class="w-100 bg-dark-700 p-5 card">
             <h5 class="text-white inter-semibold leading-lg mb-4">Confirm Purchase</h5>
+                <p class="m-0 w-50 d-flex align-items-center">
+                    <span class="text-grey-100 text-sm leading-xl leading-3xl text-truncate inter-semibold">User Name - &nbsp;</span>  
+                    <span class="leading-3xl text-white text-sm inter-semibold text-truncate">{{ user }}</span>
+                </p>
                 <p class="m-0 w-50 d-flex align-items-center">
                     <span class="text-grey-100 text-sm leading-xl leading-3xl text-truncate inter-semibold">Book Name - &nbsp;</span>  
                     <span class="leading-3xl text-white text-sm inter-semibold text-truncate">{{ book_name }}</span>
@@ -15,21 +34,18 @@
                 </p>
                 <p class="m-0 w-50 d-flex align-items-center">
                     <span class="text-grey-100 text-sm leading-xl leading-3xl text-truncate inter-semibold">Price - &nbsp;</span>  
-                    <span class="leading-3xl text-white text-sm inter-semibold text-truncate">{{ book_price|floatformat:2 }}</span>
+                    <span class="leading-3xl text-white text-sm inter-semibold text-truncate">Rs. {{ book_price|floatformat:2 }}</span>
                 </p>
-            <!-- Display Book Information -->
-            <!-- <p><strong>Book Name:</strong> {{ book_name }}</p>
-            <p><strong>Book ID:</strong> {{ book_id }}</p>
-            <p><strong>Price:</strong> ${{ book_price|floatformat:2 }}</p>  Display price with two decimal points -->
-            {{ user }}
+
             <!-- Form for confirming purchase -->
             <form action="{% url 'confirm_purchase' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="book_id" value="{{ book_id }}">
                 <input type="hidden" name="book_name" value="{{ book_name }}">
                 <input type="hidden" name="book_price" value="{{ book_price }}">
-
-                <button type="submit" class="btn btn-success inter-semibold leading-sm">Confirm Purchase</button>
+                <input type="hidden" name="is_confirmed" value="{{ True }}">
+                <input type="hidden" name="status" value="confirm">
+                <button type="submit" class="btn btn-success inter-semibold leading-sm mt-2">Confirm Purchase</button>
             </form>
         </div>
     </div>
