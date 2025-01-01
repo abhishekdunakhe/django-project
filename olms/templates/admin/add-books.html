@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="row">
+  <div class="row add-book-page">
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add Books </h4>
+                  <h4 class="card-title text-white">Add Books </h4>
                  
                   {% if messages %}
                   {% for message in messages %}
@@ -33,39 +33,39 @@
                   <form class="forms-sample"method="POST" action="{% url 'add_books' %}"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
-                      <label for="exampleInputName1">Book Name</label>
-                      <input type="text" placeholder="Enter Book Name"  name="bookname" class="form-control" required="true">
+                      <label for="exampleInputName1" class="text-white">Book Name</label>
+                      <input type="text" placeholder="Enter Book Name"  name="bookname" class="reg-input form-control" required="true">
                     </div>
                   
                     <div class="form-group">
-                        <label for="exampleInputName1">Category</label>
-                        <select class="form-control" id="catid" name="catid" required="true">
-                            <option value="">Choose Category</option>
+                        <label for="exampleInputName1" class="text-white">Category</label>
+                        <select class="form-control bg-dark-700 outline-none" id="catid" name="catid" required="true">
+                            <option value="" class="text-white">Choose Category</option>
                             {% for i in categories %}
-                        <option value="{{i.id}}">{{i.catname}}</option>{% endfor %}
+                        <option value="{{i.id}}" class="text-white">{{i.catname}}</option>{% endfor %}
                            
                           </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Author</label>
-                        <select class="form-control" id="authid" name="authid" required="true">
+                        <label for="exampleInputName1" class="text-white">Author</label>
+                        <select class="form-control bg-dark-700 outline-none" id="authid" name="authid" required="true">
                             <option value="">Choose Author</option>
                             {% for i in authors %}
-                            <option value="{{i.id}}">{{i.authorname}}</option>{% endfor %}
+                            <option value="{{i.id}}" class="text-white">{{i.authorname}}</option>{% endfor %}
                            
                           </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">ISBN Number</label>
-                        <input type="text" placeholder="Enter Book ISBN Number"  name="isbnnum" class="form-control" required="true">
+                        <label for="exampleInputName1" class="text-white">ISBN Number</label>
+                        <input type="text" placeholder="Enter Book ISBN Number"  name="isbnnum" class="reg-input form-control" required="true">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Price</label>
-                        <input type="text "placeholder="Enter Book Price"  name="price" class="form-control" required="true">
+                        <label for="exampleInputName1" class="text-white">Price</label>
+                        <input type="text "placeholder="Enter Book Price"  name="price" class="reg-input form-control" required="true">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Book Picture</label>
-                        <input type="file" name="bookimage" class="form-control" required="true">
+                        <label for="exampleInputName1" class="text-white">Book Picture</label>
+                        <input type="file" name="bookimage" class="reg-input form-control" required="true">
                       </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                    

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="row">
+  <div class="row add-author-page">
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add Author </h4>
+                  <h4 class="card-title inter-semibold text-white">Add Author </h4>
                  
                   {% if messages %}
                   {% for message in messages %}
@@ -33,8 +33,8 @@
                   <form class="forms-sample"method="POST" action="{% url 'add_author' %}">
                     {% csrf_token %}
                     <div class="form-group">
-                      <label for="exampleInputName1">Author Name</label>
-                      <input type="text"placeholder="Enter Author Name"  name="authorname" class="form-control" required="true">
+                      <label for="exampleInputName1" class="text-white">Author Name</label>
+                      <input type="text"placeholder="Enter Author Name"  name="authorname" class="reg-input form-control" required="true">
                     </div>
                   
                    
