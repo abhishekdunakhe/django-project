@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="row">
+  <div class="row search-reg-page">
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Search Reg Users</h4>
+                  <h4 class="card-title inter-semibold text-white">Search Reg Users</h4>
                   <form  method="GET">
                 
                     {% csrf_token %}
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Search(By Student Name/ID/Mobilenumber)</label>
+                        <label class="col-sm-4 col-form-label text-white">Search(By Student Name/ID/Mobilenumber)</label>
                         <div class="col-sm-12">
-                            <input type="text" id="query" name="query" class="form-control" required="">
+                            <input type="text" id="query" name="query" class="reg-input form-control" required="">
                         </div>
                     </div>
                    

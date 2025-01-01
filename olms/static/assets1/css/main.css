@@ -966,3 +966,29 @@ section.book-covers{
   color: var(--grey-100);
   height: auto !important;
 }
+
+.manage-category-page .card-body,
+.add-category-page .card-body,
+.add-author-page .card-body,
+.manage-author-page .card-body,
+.add-book-page .card-body,
+.manage-book-page .card-body,
+.issue-book-page .card-body,
+.manage-issue-page .card-body,
+.manage-registered-page .card-body,
+.search-books-page .card-body,
+.search-reg-page .card-body{
+  background-color: var(--dark-700);
+}
+.manage-category-page .card-body th,
+.manage-category-page .card-body td,
+.manage-author-page th,
+.manage-author-page td,
+.manage-book-page th,
+.manage-book-page td,
+.manage-issue-page th,
+.manage-issue-page td,
+.manage-registered-page td,
+.manage-registered-page th{
+  color: white !important;
+}
